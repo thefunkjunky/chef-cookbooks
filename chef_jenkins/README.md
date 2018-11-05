@@ -18,145 +18,145 @@ Requirements
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['plugins']</tt></td>
+    <td><tt>['chef_jenkins']['plugins']</tt></td>
     <td>String</td>
     <td></td>
-    <td><tt>JSON.parse(plugins_json)</tt></td>
+    <td><tt>[JSON parsing]</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['pipelines_json']</tt></td>
+    <td><tt>['chef_jenkins']['pipelines_json']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'/../files/default/pipelines.json'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['pipelines']</tt></td>
+    <td><tt>['chef_jenkins']['pipelines']</tt></td>
     <td>String</td>
     <td></td>
-    <td><tt>JSON.parse(pipelines_json)</tt></td>
+    <td><tt>[JSON parsing]</tt></td>
   </tr>
   <tr>
-    <td><tt>default['jenkins']['master']['version']</tt></td>
+    <td><tt>['jenkins']['master']['version']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'2.138.1-1.1'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['jenkins']['executor']['timeout']</tt></td>
+    <td><tt>['jenkins']['executor']['timeout']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>240</tt></td>
   </tr>
   <tr>
-    <td><tt>default['jenkins']['master']['port']</tt></td>
+    <td><tt>['jenkins']['master']['port']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>8080</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['jre']['package']</tt></td>
+    <td><tt>['chef_jenkins']['jre']['package']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'jdk'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['jre']['version']</tt></td>
+    <td><tt>['chef_jenkins']['jre']['version']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'1.7.0_80-fcs'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['email']['reply_to']</tt></td>
+    <td><tt>['chef_jenkins']['email']['reply_to']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'whatever@whatever.com'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['pipeline']['aws']['key_pair']</tt></td>
+    <td><tt>['chef_jenkins']['pipeline']['aws']['key_pair']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'whatever'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['jenkins']['master']['home']</tt></td>
+    <td><tt>['jenkins']['master']['home']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'/var/lib/jenkins'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['jenkins']['plugins_dir']</tt></td>
+    <td><tt>['chef_jenkins']['jenkins']['plugins_dir']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'/var/lib/jenkins/plugins'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['jenkins']['num_executors']</tt></td>
+    <td><tt>['chef_jenkins']['jenkins']['num_executors']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>5</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['jenkins']['max_item_age']</tt></td>
+    <td><tt>['chef_jenkins']['jenkins']['max_item_age']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>90</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['github']['server']</tt></td>
+    <td><tt>['chef_jenkins']['github']['server']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'www.github.com'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['github']['endpoint']</tt></td>
+    <td><tt>['chef_jenkins']['github']['endpoint']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>"https://#{node['chef_jenkins']['github']['server']}/api/v3"</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['github']['credentials']['name']</tt></td>
+    <td><tt>['chef_jenkins']['github']['credentials']['name']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'github-creds'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['slack']['webhook']</tt></td>
+    <td><tt>['chef_jenkins']['slack']['webhook']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'https://hooks.slack.com/services/ABCD1234'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['slack']['id']</tt></td>
+    <td><tt>['chef_jenkins']['slack']['id']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'slack-id'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['metrics_key']</tt></td>
+    <td><tt>['chef_jenkins']['metrics_key']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'vwipjJrw0rrK6xVvLutC8jUqw9JEHZepwbRuyIZRCkLLPsSiR9XR3u4BnHpU9v2W'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['jenkins']['url']</tt></td>
+    <td><tt>['chef_jenkins']['jenkins']['url']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'https://jenkins.myserver.com/'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_jenkins']['secrets']['path']</tt></td>
+    <td><tt>['chef_jenkins']['secrets']['path']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>"#{node['jenkins']['master']['home']}/.secrets"</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_client']['interval']</tt></td>
+    <td><tt>['chef_client']['interval']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'1800'</tt></td>
   </tr>
   <tr>
-    <td><tt>default['chef_client']['splay']</tt></td>
+    <td><tt>['chef_client']['splay']</tt></td>
     <td>String</td>
     <td></td>
     <td><tt>'300'</tt></td>
