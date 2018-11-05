@@ -1,0 +1,5 @@
+---
+driver:
+  aws_ssh_key_id: <%= node.default['cdo_chefbuild']['pipeline']['aws']['key_pair'] %>
+transport:
+  ssh_key: ~/.ssh/id_rsa

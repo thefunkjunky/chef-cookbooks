@@ -1,0 +1,13 @@
+{
+  "workflow-api": "",
+  "workflow-aggregator": "",
+  "credentials": "",
+  "github": "",
+  "github-oauth": "",
+  "http_request": "",
+  "email-ext": "",
+  "slack": "",
+  "jira": "",
+  "jdk-tool": "",
+  "metrics": ""
+}

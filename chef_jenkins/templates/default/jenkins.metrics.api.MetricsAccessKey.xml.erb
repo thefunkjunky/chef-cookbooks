@@ -1,0 +1,13 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<jenkins.metrics.api.MetricsAccessKey_-DescriptorImpl plugin="metrics@<%= node['chef_jenkins']['plugins']['metrics'] %>">
+  <accessKeys>
+    <jenkins.metrics.api.MetricsAccessKey>
+      <key><%= node['chef_jenkins']['metrics_key'] %></key>
+      <canPing>true</canPing>
+      <canThreadDump>false</canThreadDump>
+      <canHealthCheck>true</canHealthCheck>
+      <canMetrics>true</canMetrics>
+      <origins>*</origins>
+    </jenkins.metrics.api.MetricsAccessKey>
+  </accessKeys>
+</jenkins.metrics.api.MetricsAccessKey_-DescriptorImpl>

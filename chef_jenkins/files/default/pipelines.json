@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Pipeline1",
+    "ghe_org": "org1",
+    "credentials_name": "github-creds",
+    "polling": 1800000,
+    "max_item_age": 90,
+    "shared_pipeline_repo": "org1-pipeline",
+    "shared_pipeline_name": "pipeline1",
+    "shared_pipeline_id": "146953ab-c197-446a-a61a-b1aa8f46c34e"
+  },
+  {
+    "name": "Pipeline2",
+    "ghe_org": "org2",
+    "credentials_name": "github-creds",
+    "polling": 1800000,
+    "max_item_age": 90,
+    "shared_pipeline_repo": "org2-pipeline",
+    "shared_pipeline_name": "pipeline2",
+    "shared_pipeline_id": "146953ab-d237-446a-a61a-b1aa8f46c34e"
+  }
+]

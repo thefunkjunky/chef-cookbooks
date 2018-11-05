@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Jenkins test pipeline",
+    "ghe_org": "jenkins-test",
+    "credentials_name": "chef-pipeline",
+    "polling": 1800000,
+    "max_item_age": 90,
+    "shared_pipeline_repo": "pipeline",
+    "shared_pipeline_name": "pipeline",
+    "shared_pipeline_id": "146953ab-c197-446a-a61a-b1aa8f46c34e"
+  },
+  {
+    "name": "Test deployments pipeline",
+    "ghe_org": "test-deployments",
+    "credentials_name": "chef-pipeline",
+    "polling": 1800000,
+    "max_item_age": 90,
+    "shared_pipeline_repo": "pipeline",
+    "shared_pipeline_name": "deploy_pipeline",
+    "shared_pipeline_id": "146953ab-d201-446a-a61a-b1aa8f46c34e"
+  }
+]

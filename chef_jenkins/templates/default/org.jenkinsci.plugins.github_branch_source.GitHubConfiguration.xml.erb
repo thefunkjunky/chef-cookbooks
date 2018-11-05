@@ -1,0 +1,9 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugins.github__branch__source.GitHubConfiguration plugin="github-branch-source@<%= node['chef_jenkins']['plugins']['github-branch-source'] %>">
+  <endpoints>
+    <org.jenkinsci.plugins.github__branch__source.Endpoint>
+      <name>My Github</name>
+      <apiUri><%= node['chef_jenkins']['github']['endpoint'] %></apiUri>
+    </org.jenkinsci.plugins.github__branch__source.Endpoint>
+  </endpoints>
+</org.jenkinsci.plugins.github__branch__source.GitHubConfiguration>

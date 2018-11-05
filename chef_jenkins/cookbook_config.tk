@@ -1,0 +1,14 @@
+driver:
+  instance_type: t2.large
+suites:
+- attributes:
+    chef_jenkins:
+      email:
+        default_recipients: devnull@target.com
+      jenkins:
+        url:
+          "http://<%= (YAML.load_file('.kitchen/jenkins-centos7.yml')['hostname']) rescue '0.0.0.0' %>:8080"
+      pipelines_json: "/../files/default/test_pipelines.json"
+  name: chef_jenkins 
+  run_list:
+    - recipe[chef_jenkins::default]

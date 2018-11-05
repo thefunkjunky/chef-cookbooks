@@ -1,0 +1,15 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<github-plugin-configuration plugin="github@<%= node['chef_jenkins']['plugins']['github'] %>">
+  <configs>
+    <github-server-config>
+      <name>My Github</name>
+      <apiUrl><%= node['chef_jenkins']['github']['endpoint'] %></apiUrl>
+      <manageHooks>true</manageHooks>
+      <credentialsId><%= node['chef_jenkins']['github']['credentials']['name'] %>-text</credentialsId>
+      <clientCacheSize>20</clientCacheSize>
+    </github-server-config>
+  </configs>
+  <hookSecretConfig>
+    <credentialsId></credentialsId>
+  </hookSecretConfig>
+</github-plugin-configuration>

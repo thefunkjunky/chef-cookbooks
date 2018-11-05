@@ -1,0 +1,24 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugins.workflow.libs.GlobalLibraries plugin="workflow-cps-global-lib@<%= node['chef_jenkins']['plugins']['workflow-cps-global-lib'] %>">
+  <libraries>
+    <% node['chef_jenkins']['pipelines'].each do |pipeline| %>
+      <org.jenkinsci.plugins.workflow.libs.LibraryConfiguration>
+        <name><%= pipeline['shared_pipeline_name'] %></name>
+        <retriever class="org.jenkinsci.plugins.workflow.libs.SCMSourceRetriever">
+          <scm class="org.jenkinsci.plugins.github_branch_source.GitHubSCMSource" plugin="github-branch-source@<%= node['chef_jenkins']['plugins']['github-branch-source'] %>">
+            <id><%= pipeline['shared_pipeline_id'] %></id>
+            <apiUri><%= node['chef_jenkins']['github']['endpoint'] %></apiUri>
+            <credentialsId><%= pipeline['credentials_name'] %>-userpass</credentialsId>
+            <repoOwner><%= pipeline['ghe_org'] %></repoOwner>
+            <repository><%= pipeline['shared_pipeline_repo'] %></repository>
+            <traits/>
+          </scm>
+        </retriever>
+        <defaultVersion>master</defaultVersion>
+        <implicit>false</implicit>
+        <allowVersionOverride>true</allowVersionOverride>
+        <includeInChangesets>true</includeInChangesets>
+      </org.jenkinsci.plugins.workflow.libs.LibraryConfiguration>
+    <% end %>
+  </libraries>
+</org.jenkinsci.plugins.workflow.libs.GlobalLibraries>
