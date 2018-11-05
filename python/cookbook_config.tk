@@ -1,0 +1,11 @@
+---
+platforms:
+  - name: centos-7
+
+suites:
+  - name: py_base
+    run_list:
+    - recipe[cdo_python::default]
+  - name: py_tests
+    run_list:
+    - recipe[cdo_python::py_tests]
