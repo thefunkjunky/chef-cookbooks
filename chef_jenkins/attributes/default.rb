@@ -33,7 +33,7 @@ default['chef_jenkins']['jre']['package'] = 'jdk'
 default['chef_jenkins']['jre']['version'] = '1.7.0_80-fcs'
 
 # Mail settings
-default['cdo_chefbuild']['email']['reply_to'] = 'whatever@whatever.com'
+default['chef_jenkins']['email']['reply_to'] = 'whatever@whatever.com'
 
 # We interact with AWS using these keys
 default['chef_jenkins']['pipeline']['aws']['key_pair'] = 'whatever'
