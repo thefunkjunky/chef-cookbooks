@@ -232,7 +232,7 @@ Although this cookbook is designed to have as much automatically handled by the 
 
 - Branch protection - This cookbook contains a python script that scans the target Github organization and updates every eligible repository to have master branch protection. However, the Github API doesn't allow this API call on a repo that has never had branch protections set before, as fresh repos will return a `nil` type instead of a blank list ("[]") and fail the API call.  To fix this, turn branch protections on the repo from the UI, and then turn them off (or just leave them on).  So long as they were turned on once, the API request will work.  I know this is dumb, but this is how Github made it.
 
-- Webhooks - Jenkins has been configured to automatically create the necessary webhooks for every eligible repo it finds.  However, it doesn't REMOVE older webhooks.  If the Chefbuild Jenkins URL is changed, new webhooks will have to be automatically generated, and the old ones manually removed.
+- Webhooks - Jenkins has been configured to automatically create the necessary webhooks for every eligible repo it finds.  However, it doesn't REMOVE older webhooks.  If the Jenkins URL is changed, new webhooks will have to be automatically generated, and the old ones manually removed.
 
 - Jenkins Upgrades - due to strange Jenkins behavior affecting the config.xml file, the config.xml on the existing node must be deleted BEFORE applying/converging a new Jenkins version!  Jenkins somehow modifies this file in a way that causes the Jenkins server to restart every chef-client run, and I can't figure out exactly how it's being changed.
 
