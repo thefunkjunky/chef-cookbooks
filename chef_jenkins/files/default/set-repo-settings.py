@@ -54,8 +54,58 @@ def set_branch_protection(args, repos):
         "on repo {}:\n\"{}\"".format(
           repo["html_url"], protection_update.content))
 
+def set_repo_labels(args, repos):
+  """Sets up repo labels."""
+  labels = [
+    {
+      "color": "b60205",
+      "name": "Changes Requested"
+    },
+    {
+      "color": "0e8a16",
+      "name": "Ready for 2nd Review"
+    },
+    {
+      "color": "fbca04",
+      "name": "Need 2 Reviews"
+    },
+    {
+      "color": "d93f0b",
+      "name": "Wait for CHG"
+    }
+  ]
+  for repo in repos:
+    labels_url = repo["labels_url"].replace(
+      "{/name}", "")
+    labels_get_request = requests.get(
+        labels_url,
+        headers=args.headers
+        )
+    repo_labels = labels_get_request.json()
+    for label in labels:
+      # If label already exists, update instead of add
+      existing_label = [repo_label for repo_label in repo_labels
+                        if repo_label["name"] == label["name"]]
+      if existing_label:
+        label_mod_request = requests.patch(
+          existing_label[0]["url"],
+          headers=args.headers,
+          data=json.dumps(label))
+      else:
+        label_mod_request = requests.post(
+          labels_url,
+          headers=args.headers,
+          data=json.dumps(label))
+      if label_mod_request.status_code not in [200, 201]:
+        raise Exception("Failed to add label {} "\
+          "on repo {}:\n\"{}\"\nStatus: {}\n".format(
+            label["name"],
+            repo["html_url"],
+            label_mod_request.content,
+            label_mod_request.status_code))
+
 def main():
-  """Main function for set_branch_protections"""
+  """Main function for set-repo-settings"""
   parser = argparse.ArgumentParser(
     description="Searchs a GHE organization for repos with a Jenkinsfile, and "\
     "sets branch protection status checks on them.")
@@ -76,6 +126,7 @@ def main():
   valid_repos = get_repos(args)
   if valid_repos:
     set_branch_protection(args, valid_repos)
+    set_repo_labels(args, valid_repos)
   else:
     raise Exception("No valid repositories found in GHE organization {}".format(
       args.org))
