@@ -85,7 +85,7 @@ def set_repo_labels(args, repos):
     for label in labels:
       # If label already exists, update instead of add
       existing_label = [repo_label for repo_label in repo_labels
-                        if repo_label["name"] == label["name"]]
+                        if repo_label["name"].lower() == label["name"].lower()]
       if existing_label:
         label_mod_request = requests.patch(
           existing_label[0]["url"],
@@ -97,7 +97,7 @@ def set_repo_labels(args, repos):
           headers=args.headers,
           data=json.dumps(label))
       if label_mod_request.status_code not in [200, 201]:
-        raise Exception("Failed to add label {} "\
+        raise Exception("Failed to add/modify label {} "\
           "on repo {}:\n\"{}\"\nStatus: {}\n".format(
             label["name"],
             repo["html_url"],
