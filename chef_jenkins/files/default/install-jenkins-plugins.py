@@ -91,11 +91,10 @@ def compare_manifest(to_install, manifest):
   an equal or lower version #."""
   trimmed_plugins = copy.deepcopy(to_install)
   for plugin, version in to_install.iteritems():
-    if plugin in manifest:
-      if is_higher_version(version, manifest[plugin]):
-        continue
-      else:
-        trimmed_plugins.pop(plugin)
+    if (plugin in manifest) and is_higher_version(version, manifest[plugin]):
+      continue
+    else:
+      trimmed_plugins.pop(plugin)
   return trimmed_plugins
 
 def download_deps(all_plugins, download_dir):
